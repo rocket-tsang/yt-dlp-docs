@@ -1,3 +1,11 @@
+---
+title: 联系我们 - yt-dlp 技术文档
+description: yt-dlp 技术文档联系方式，包括 GitHub Issues、Discussions 等反馈渠道，以及常见问题解决方案。
+meta:
+  - name: keywords
+    content: yt-dlp联系方式,yt-dlp帮助,yt-dlp反馈,yt-dlp问题,yt-dlp社区
+---
+
 # 联系我们
 
 感谢您访问 yt-dlp 技术文档网站！如果您有任何问题、建议或反馈，请通过以下方式联系我们。

@@ -1,9 +1,21 @@
 ---
 home: true
-title: 首页
+title: yt-dlp 技术文档 - 强大的视频下载工具完整指南
+description: yt-dlp 是一个功能强大的视频下载工具，支持 1000+ 网站。本教程提供完整的安装指南、命令行使用、参数详解和实战案例。
 heroImage: /logo.png
 heroText: yt-dlp 技术文档
 tagline: 强大的视频下载工具完整使用指南
+meta:
+  - name: keywords
+    content: yt-dlp教程,视频下载工具,youtube-dl替代,YouTube视频下载,Bilibili下载,视频下载教程,yt-dlp中文文档
+  - name: description
+    content: yt-dlp 是一个功能强大的视频下载工具，支持 1000+ 网站。本教程提供完整的安装指南、命令行使用、参数详解和实战案例。
+  - property: og:title
+    content: yt-dlp 技术文档 - 强大的视频下载工具完整指南
+  - property: og:description
+    content: yt-dlp 是一个功能强大的视频下载工具，支持 1000+ 网站。本教程提供完整的安装指南、命令行使用、参数详解和实战案例。
+  - property: og:image
+    content: /logo.png
 actions:
   - text: 开始学习
     link: /guide/

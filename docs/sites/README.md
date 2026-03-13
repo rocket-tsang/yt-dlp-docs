@@ -1,3 +1,11 @@
+---
+title: yt-dlp 支持网站列表 - YouTube/Bilibili/Twitter 等 1000+ 网站
+description: yt-dlp 支持 YouTube、Bilibili、Twitter、Instagram 等 1000+ 视频网站，详细介绍各网站支持的功能和使用注意事项。
+meta:
+  - name: keywords
+    content: yt-dlp支持网站,YouTube下载,Bilibili下载,Twitter下载,Instagram下载,视频网站列表
+---
+
 # 支持网站列表
 
 yt-dlp 支持超过 1000+ 个视频网站，本章将介绍一些常用的支持网站及其使用注意事项。

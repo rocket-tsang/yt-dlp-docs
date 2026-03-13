@@ -1,3 +1,11 @@
+---
+title: yt-dlp 命令行使用教程 - 基础到进阶完整指南
+description: yt-dlp 命令行使用完整教程，包括视频下载、音频提取、格式选择、字幕下载等常见场景，附带大量实用示例。
+meta:
+  - name: keywords
+    content: yt-dlp命令,yt-dlp使用教程,视频下载命令,YouTube下载,Bilibili下载,yt-dlp实例
+---
+
 # 命令行使用
 
 本章将介绍 yt-dlp 的基本命令行使用方法和常见场景。

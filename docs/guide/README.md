@@ -1,3 +1,11 @@
+---
+title: yt-dlp 项目介绍 - 什么是 yt-dlp 及其主要特性
+description: yt-dlp 是一个功能强大的命令行视频下载工具，支持 1000+ 网站。了解 yt-dlp 与 youtube-dl 的区别、主要特性、使用场景等。
+meta:
+  - name: keywords
+    content: yt-dlp介绍,什么是yt-dlp,yt-dlp特性,youtube-dl替代,视频下载工具,yt-dlp功能
+---
+
 # yt-dlp 项目介绍
 
 ## 项目概述

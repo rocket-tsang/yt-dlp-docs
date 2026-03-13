@@ -1,3 +1,11 @@
+---
+title: yt-dlp 参数详解 - 完整命令行参数说明
+description: yt-dlp 命令行参数完整说明，包括视频选择、下载控制、网络设置、认证等所有参数的详细用法和示例。
+meta:
+  - name: keywords
+    content: yt-dlp参数,yt-dlp选项,yt-dlp命令行参数,yt-dlp配置,视频下载参数
+---
+
 # 参数详解
 
 本章详细介绍 yt-dlp 的各种命令行参数及其用法。

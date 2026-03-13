@@ -1,3 +1,11 @@
+---
+title: yt-dlp 安装指南 - Windows/Linux/macOS 安装教程
+description: 详细的 yt-dlp 安装教程，涵盖 Windows、Linux、macOS 多种安装方法，包括 winget、Homebrew、pip 等安装方式，附常见问题解决方案。
+meta:
+  - name: keywords
+    content: yt-dlp安装,yt-dlp下载,Windows安装yt-dlp,macOS安装yt-dlp,Linux安装yt-dlp,yt-dlp安装教程
+---
+
 # 安装指南
 
 本章节将介绍如何在 Windows、Linux 和 macOS 上安装 yt-dlp。

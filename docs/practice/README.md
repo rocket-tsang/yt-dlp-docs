@@ -1,3 +1,11 @@
+---
+title: yt-dlp 实战案例 - 真实场景应用教程
+description: yt-dlp 实战案例教程，包括批量下载播放列表、下载直播视频、提取音频等真实场景，附带完整命令和脚本。
+meta:
+  - name: keywords
+    content: yt-dlp实战,yt-dlp案例,yt-dlp教程,批量下载视频,下载播放列表,提取音频
+---
+
 # 技术实战
 
 本章将通过实际案例展示 yt-dlp 的各种应用场景。

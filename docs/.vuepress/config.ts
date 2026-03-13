@@ -1,9 +1,30 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
+import { sitemapPlugin } from '@vuepress/plugin-sitemap'
 
 export default defineUserConfig({
   dest: 'dist',
+  base: '/',
+  head: [
+    ['meta', { name: 'keywords', content: 'yt-dlp,视频下载工具,youtube-dl,YouTube下载,Bilibili下载,Twitter下载,视频格式转换,音频提取' }],
+    ['meta', { name: 'description', content: '强大的视频下载工具完整使用指南' }],
+    ['meta', { name: 'author', content: 'yt-dlp 社区' }],
+    ['meta', { name: 'google-site-verification', content: 'YOUR_GOOGLE_VERIFICATION_CODE' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'yt-dlp 技术文档' }],
+    ['meta', { property: 'og:title', content: 'yt-dlp 技术文档' }],
+    ['meta', { property: 'og:description', content: '强大的视频下载工具完整使用指南' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['link', { rel: 'icon', href: '/logo2.png' }],
+    ['link', { rel: 'canonical', href: 'https://your-domain.com' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+  ],
+  plugins: [
+    sitemapPlugin({
+      hostname: 'https://your-domain.com',
+    }),
+  ],
   bundler: viteBundler({
     vuePluginOptions: {
       isProduction: true,
