@@ -3,6 +3,7 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
+  dest: 'dist',
   bundler: viteBundler(),
   theme: defaultTheme({
     logo: '/logo2.png',
