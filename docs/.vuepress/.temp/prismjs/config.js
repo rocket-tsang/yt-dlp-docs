@@ -1,5 +1,0 @@
-import "/Users/zengrunfeng/projects/2026/yt-dlp/node_modules/@vuepress/highlighter-helper/dist/client/styles/base.css"
-import "/Users/zengrunfeng/projects/2026/yt-dlp/node_modules/@vuepress/plugin-prismjs/dist/client/styles/nord.css"
-import "/Users/zengrunfeng/projects/2026/yt-dlp/node_modules/@vuepress/highlighter-helper/dist/client/styles/line-numbers.css"
-import "/Users/zengrunfeng/projects/2026/yt-dlp/node_modules/@vuepress/highlighter-helper/dist/client/styles/notation-highlight.css"
-import "/Users/zengrunfeng/projects/2026/yt-dlp/node_modules/@vuepress/highlighter-helper/dist/client/styles/code-block-title.css"
