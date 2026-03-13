@@ -4,7 +4,11 @@ import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   dest: 'dist',
-  bundler: viteBundler(),
+  bundler: viteBundler({
+    vuePluginOptions: {
+      isProduction: true,
+    },
+  }),
   theme: defaultTheme({
     logo: '/logo2.png',
     repo: 'yt-dlp/yt-dlp',
