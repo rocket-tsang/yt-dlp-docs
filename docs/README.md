@@ -32,7 +32,7 @@ features:
     details: 开源免费，跨平台支持 Windows、Linux、macOS
   - title: 易于使用
     details: 简单的命令行操作，丰富的参数配置，满足各种需求
-footer: MIT Licensed | Copyright © 2024
+footer: <CustomFooter />
 ---
 
 ## 快速开始

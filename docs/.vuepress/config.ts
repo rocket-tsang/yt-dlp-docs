@@ -19,6 +19,9 @@ export default defineUserConfig({
     ['link', { rel: 'icon', href: '/logo2.png' }],
     ['link', { rel: 'canonical', href: 'https://yt.gzsoon.com/' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
+    ['script', { charset: 'UTF-8', id: 'LA_COLLECT', src: '//sdk.51.la/js-sdk-pro.min.js' }],
+    ['script', {}, 'LA.init({id:"JrOb8e7AfCcc9tUO",ck:"JrOb8e7AfCcc9tUO"})'],
+
   ],
   plugins: [
     sitemapPlugin({
@@ -47,6 +50,7 @@ export default defineUserConfig({
     openInNewWindow: '在新窗口打开',
     toggleColorMode: '切换颜色模式',
     toggleSidebar: '切换侧边栏',
+    darkMode: false, // 禁用暗色模式以避免SSR issue
     navbar: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide/' },
