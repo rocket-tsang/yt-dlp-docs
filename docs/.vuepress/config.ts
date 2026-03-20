@@ -17,12 +17,12 @@ export default defineUserConfig({
     ['meta', { property: 'og:description', content: '强大的视频下载工具完整使用指南' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['link', { rel: 'icon', href: '/logo2.png' }],
-    ['link', { rel: 'canonical', href: 'https://your-domain.com' }],
+    ['link', { rel: 'canonical', href: 'https://yt.gzsoon.com/' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
   ],
   plugins: [
     sitemapPlugin({
-      hostname: 'https://your-domain.com',
+      hostname: 'https://yt.gzsoon.com/',
     }),
   ],
   bundler: viteBundler({
@@ -32,7 +32,7 @@ export default defineUserConfig({
   }),
   theme: defaultTheme({
     logo: '/logo2.png',
-    repo: 'yt-dlp/yt-dlp',
+    repo: 'rocket-tsang/yt-dlp-docs',
     repoLabel: 'GitHub',
     docsDir: 'docs',
     editLink: false,

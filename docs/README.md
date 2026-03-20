@@ -1,7 +1,7 @@
 ---
 home: true
 title: yt-dlp 技术文档 - 强大的视频下载工具完整指南
-description: yt-dlp 是一个功能强大的视频下载工具，支持 1000+ 网站。本教程提供完整的安装指南、命令行使用、参数详解和实战案例。
+description: yt-dlp 是一个功能强大的视频下载工具，支持 1000+ 网站。本教程提供完整的安装指南、命令行使用、参数详解 and 实战案例。
 heroImage: /logo.png
 heroText: yt-dlp 技术文档
 tagline: 强大的视频下载工具完整使用指南
@@ -9,11 +9,11 @@ meta:
   - name: keywords
     content: yt-dlp教程,视频下载工具,youtube-dl替代,YouTube视频下载,Bilibili下载,视频下载教程,yt-dlp中文文档
   - name: description
-    content: yt-dlp 是一个功能强大的视频下载工具，支持 1000+ 网站。本教程提供完整的安装指南、命令行使用、参数详解和实战案例。
+    content: yt-dlp 是一个功能强大的视频下载工具,支持 1000+ 网站.本教程提供完整的安装指南,命令行使用,参数详解 and 实战案例.
   - property: og:title
     content: yt-dlp 技术文档 - 强大的视频下载工具完整指南
   - property: og:description
-    content: yt-dlp 是一个功能强大的视频下载工具，支持 1000+ 网站。本教程提供完整的安装指南、命令行使用、参数详解和实战案例。
+    content: yt-dlp 是一个功能强大的视频下载工具,支持 1000+ 网站.本教程提供完整的安装指南,命令行使用,参数详解 and 实战案例.
   - property: og:image
     content: /logo.png
 actions:
@@ -21,7 +21,7 @@ actions:
     link: /guide/
     type: primary
   - text: GitHub 项目
-    link: https://github.com/yt-dlp/yt-dlp
+    link: https://github.com/rocket-tsang/yt-dlp-docs
     type: secondary
 features:
   - title: 支持上千个网站
@@ -39,7 +39,7 @@ footer: MIT Licensed | Copyright © 2024
 
 ### 什么是 yt-dlp？
 
-yt-dlp 是一个基于 youtube-dl 的增强版视频下载工具，支持从数千个视频网站下载视频和音频。它是 youtube-dl 的一个分支，增加了许多新功能和改进。
+yt-dlp 是一个基于 youtube-dl 的增强版视频下载工具，支持从数千个视频网站下载视频 and 改进。
 
 ### 主要特性
 
@@ -74,4 +74,3 @@ yt-dlp -f "best" "https://www.youtube.com/watch?v=VIDEO_ID"
 
 # 只下载音频
 yt-dlp -x --audio-format mp3 "https://www.youtube.com/watch?v=VIDEO_ID"
-```
