@@ -20,7 +20,8 @@ export default defineUserConfig({
     ['link', { rel: 'canonical', href: 'https://your-domain.com' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
     ['script', { charset: 'UTF-8', id: 'LA_COLLECT', src: '//sdk.51.la/js-sdk-pro.min.js' }],
-    ['script', {}, 'LA.init({id:"L8UD2Ngtdg2rUIfK",ck:"L8UD2Ngtdg2rUIfK"})'],
+    ['script', {}, 'LA.init({id:"JrOb8e7AfCcc9tUO",ck:"JrOb8e7AfCcc9tUO"})'],
+
   ],
   plugins: [
     sitemapPlugin({
