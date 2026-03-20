@@ -35,7 +35,7 @@ export default defineUserConfig({
   }),
   theme: defaultTheme({
     logo: '/logo2.png',
-    repo: 'yt-dlp/yt-dlp',
+    repo: 'rocket-tsang/yt-dlp-docs',
     repoLabel: 'GitHub',
     docsDir: 'docs',
     editLink: false,
