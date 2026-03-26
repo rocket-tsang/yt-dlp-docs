@@ -60,6 +60,7 @@ export default defineUserConfig({
       { text: '支持网站', link: '/sites/' },
       { text: '实战案例', link: '/practice/' },
       { text: '联系我们', link: '/contact/' },
+      { text: '隐私权', link: '/privacy/' },
     ],
     sidebar: {
       '/guide/': [
@@ -102,6 +103,12 @@ export default defineUserConfig({
         {
           text: '联系我们',
           children: ['/contact/README.md'],
+        },
+      ],
+      '/privacy/': [
+        {
+          text: '隐私权政策',
+          children: ['/privacy/README.md'],
         },
       ],
     },

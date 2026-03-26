@@ -1,0 +1,607 @@
+<template><div><h1 id="参数详解" tabindex="-1"><a class="header-anchor" href="#参数详解"><span>参数详解</span></a></h1>
+<p>本章详细介绍 yt-dlp 的各种命令行参数及其用法。</p>
+<h2 id="通用选项" tabindex="-1"><a class="header-anchor" href="#通用选项"><span>通用选项</span></a></h2>
+<h3 id="h-help" tabindex="-1"><a class="header-anchor" href="#h-help"><span>-h, --help</span></a></h3>
+<p>显示帮助信息并退出。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">--help</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="version" tabindex="-1"><a class="header-anchor" href="#version"><span>--version</span></a></h3>
+<p>显示版本号并退出。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">--version</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="u-update" tabindex="-1"><a class="header-anchor" href="#u-update"><span>-U, --update</span></a></h3>
+<p>更新 yt-dlp 到最新版本。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-U</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="no-update" tabindex="-1"><a class="header-anchor" href="#no-update"><span>--no-update</span></a></h3>
+<p>不检查更新（某些安装方法需要）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --no-update <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="网络选项" tabindex="-1"><a class="header-anchor" href="#网络选项"><span>网络选项</span></a></h2>
+<h3 id="proxy-url" tabindex="-1"><a class="header-anchor" href="#proxy-url"><span>--proxy URL</span></a></h3>
+<p>使用指定的代理服务器。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># HTTP 代理</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--proxy</span> <span class="token string">"http://127.0.0.1:8080"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># HTTPS 代理</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--proxy</span> <span class="token string">"https://127.0.0.1:8080"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># SOCKS5 代理</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--proxy</span> <span class="token string">"socks5://127.0.0.1:1080"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 带认证的代理</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--proxy</span> <span class="token string">"socks5://user:password@127.0.0.1:1080"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="socket-timeout-seconds" tabindex="-1"><a class="header-anchor" href="#socket-timeout-seconds"><span>--socket-timeout SECONDS</span></a></h3>
+<p>设置套接字超时时间（秒）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --socket-timeout <span class="token number">30</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="source-address-ip" tabindex="-1"><a class="header-anchor" href="#source-address-ip"><span>--source-address IP</span></a></h3>
+<p>设置客户端 IP 地址。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --source-address <span class="token number">192.168</span>.1.100 <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="force-ipv4" tabindex="-1"><a class="header-anchor" href="#force-ipv4"><span>--force-ipv4</span></a></h3>
+<p>强制使用 IPv4。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --force-ipv4 <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="force-ipv6" tabindex="-1"><a class="header-anchor" href="#force-ipv6"><span>--force-ipv6</span></a></h3>
+<p>强制使用 IPv6。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --force-ipv6 <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="视频选择选项" tabindex="-1"><a class="header-anchor" href="#视频选择选项"><span>视频选择选项</span></a></h2>
+<h3 id="playlist-start-number" tabindex="-1"><a class="header-anchor" href="#playlist-start-number"><span>--playlist-start NUMBER</span></a></h3>
+<p>指定播放列表开始位置（默认为 1）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 从第 5 个视频开始下载</span></span>
+<span class="line">yt-dlp --playlist-start <span class="token number">5</span> <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="playlist-end-number" tabindex="-1"><a class="header-anchor" href="#playlist-end-number"><span>--playlist-end NUMBER</span></a></h3>
+<p>指定播放列表结束位置（默认为最后一个）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载到第 10 个视频</span></span>
+<span class="line">yt-dlp --playlist-end <span class="token number">10</span> <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="playlist-items-item-spec" tabindex="-1"><a class="header-anchor" href="#playlist-items-item-spec"><span>--playlist-items ITEM_SPEC</span></a></h3>
+<p>指定播放列表中要下载的项目。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载第 1、3、5 个视频</span></span>
+<span class="line">yt-dlp --playlist-items <span class="token number">1,3</span>,5 <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载第 1 到第 5 个视频</span></span>
+<span class="line">yt-dlp --playlist-items <span class="token number">1</span>-5 <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载第 1 到第 3 个和第 7 个视频</span></span>
+<span class="line">yt-dlp --playlist-items <span class="token number">1</span>-3,7 <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="match-title-regex" tabindex="-1"><a class="header-anchor" href="#match-title-regex"><span>--match-title REGEX</span></a></h3>
+<p>下载标题匹配正则表达式的视频。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载标题包含"tutorial"的视频</span></span>
+<span class="line">yt-dlp --match-title <span class="token string">"tutorial"</span> <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 使用正则表达式</span></span>
+<span class="line">yt-dlp --match-title <span class="token string">"(?i)python|java"</span> <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="reject-title-regex" tabindex="-1"><a class="header-anchor" href="#reject-title-regex"><span>--reject-title REGEX</span></a></h3>
+<p>跳过标题匹配正则表达式的视频。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 跳过标题包含"trailer"的视频</span></span>
+<span class="line">yt-dlp --reject-title <span class="token string">"trailer"</span> <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="max-downloads-number" tabindex="-1"><a class="header-anchor" href="#max-downloads-number"><span>--max-downloads NUMBER</span></a></h3>
+<p>下载指定数量的视频后停止。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 只下载前 5 个视频</span></span>
+<span class="line">yt-dlp --max-downloads <span class="token number">5</span> <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="min-filesize-size" tabindex="-1"><a class="header-anchor" href="#min-filesize-size"><span>--min-filesize SIZE</span></a></h3>
+<p>不下载小于指定大小的文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 不下载小于 10MB 的文件</span></span>
+<span class="line">yt-dlp --min-filesize 10M <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="max-filesize-size" tabindex="-1"><a class="header-anchor" href="#max-filesize-size"><span>--max-filesize SIZE</span></a></h3>
+<p>不下载大于指定大小的文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 不下载大于 1GB 的文件</span></span>
+<span class="line">yt-dlp --max-filesize 1G <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="date-date" tabindex="-1"><a class="header-anchor" href="#date-date"><span>--date DATE</span></a></h3>
+<p>下载指定日期上传的视频。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载 2024年1月1日的视频</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--date</span> <span class="token number">20240101</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载 2024年1月的视频</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--date</span> <span class="token number">20240101</span>-20240131 <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="datebefore-date" tabindex="-1"><a class="header-anchor" href="#datebefore-date"><span>--datebefore DATE</span></a></h3>
+<p>下载指定日期之前上传的视频。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载 2024年1月1日之前的视频</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--datebefore</span> <span class="token number">20240101</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="dateafter-date" tabindex="-1"><a class="header-anchor" href="#dateafter-date"><span>--dateafter DATE</span></a></h3>
+<p>下载指定日期之后上传的视频。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载 2024年1月1日之后的视频</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--dateafter</span> <span class="token number">20240101</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="下载选项" tabindex="-1"><a class="header-anchor" href="#下载选项"><span>下载选项</span></a></h2>
+<h3 id="r-limit-rate-rate" tabindex="-1"><a class="header-anchor" href="#r-limit-rate-rate"><span>-r, --limit-rate RATE</span></a></h3>
+<p>限制下载速度。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 限制为 1MB/s</span></span>
+<span class="line">yt-dlp --limit-rate 1M <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 限制为 500KB/s</span></span>
+<span class="line">yt-dlp --limit-rate 500K <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 限制为 2.5MB/s</span></span>
+<span class="line">yt-dlp --limit-rate <span class="token number">2</span>.5M <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="r-retries-retries" tabindex="-1"><a class="header-anchor" href="#r-retries-retries"><span>-R, --retries RETRIES</span></a></h3>
+<p>重试次数（默认为 10）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 重试 5 次</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--retries</span> <span class="token number">5</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 无限重试</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--retries</span> infinite <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="fragment-retries-retries" tabindex="-1"><a class="header-anchor" href="#fragment-retries-retries"><span>--fragment-retries RETRIES</span></a></h3>
+<p>片段重试次数。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --fragment-retries <span class="token number">10</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="skip-unavailable-fragments" tabindex="-1"><a class="header-anchor" href="#skip-unavailable-fragments"><span>--skip-unavailable-fragments</span></a></h3>
+<p>跳过不可用的片段。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --skip-unavailable-fragments <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="abort-on-unavailable-fragment" tabindex="-1"><a class="header-anchor" href="#abort-on-unavailable-fragment"><span>--abort-on-unavailable-fragment</span></a></h3>
+<p>遇到不可用片段时中止下载。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --abort-on-unavailable-fragment <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="keep-fragments" tabindex="-1"><a class="header-anchor" href="#keep-fragments"><span>--keep-fragments</span></a></h3>
+<p>下载完成后保留片段。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --keep-fragments <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="buffer-size-size" tabindex="-1"><a class="header-anchor" href="#buffer-size-size"><span>--buffer-size SIZE</span></a></h3>
+<p>设置缓冲区大小（默认为 1024）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --buffer-size 16K <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="no-resize-buffer" tabindex="-1"><a class="header-anchor" href="#no-resize-buffer"><span>--no-resize-buffer</span></a></h3>
+<p>不自动调整缓冲区大小。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --no-resize-buffer <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="http-chunk-size-size" tabindex="-1"><a class="header-anchor" href="#http-chunk-size-size"><span>--http-chunk-size SIZE</span></a></h3>
+<p>设置 HTTP 块大小。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --http-chunk-size 1M <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="continue" tabindex="-1"><a class="header-anchor" href="#continue"><span>--continue</span></a></h3>
+<p>恢复中断的下载（默认开启）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">--continue</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="no-continue" tabindex="-1"><a class="header-anchor" href="#no-continue"><span>--no-continue</span></a></h3>
+<p>不恢复中断的下载。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --no-continue <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="文件系统选项" tabindex="-1"><a class="header-anchor" href="#文件系统选项"><span>文件系统选项</span></a></h2>
+<h3 id="a-batch-file-file" tabindex="-1"><a class="header-anchor" href="#a-batch-file-file"><span>-a, --batch-file FILE</span></a></h3>
+<p>从文件读取要下载的 URL。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 从 urls.txt 读取 URL</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-a</span> urls.txt</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 批量下载</span></span>
+<span class="line">yt-dlp --batch-file urls.txt</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="id" tabindex="-1"><a class="header-anchor" href="#id"><span>--id</span></a></h3>
+<p>仅使用视频 ID 作为文件名。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">--id</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="o-output-template" tabindex="-1"><a class="header-anchor" href="#o-output-template"><span>-o, --output TEMPLATE</span></a></h3>
+<p>输出文件名模板。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 基本用法</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-o</span> <span class="token string">"%(title)s.%(ext)s"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 包含路径</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-o</span> <span class="token string">"~/Downloads/%(title)s.%(ext)s"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 复杂命名</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-o</span> <span class="token string">"%(uploader)s/%(upload_date)s - %(title)s.%(ext)s"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 播放列表编号</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-o</span> <span class="token string">"%(playlist_index)03d - %(title)s.%(ext)s"</span> <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="output-na-placeholder-placeholder" tabindex="-1"><a class="header-anchor" href="#output-na-placeholder-placeholder"><span>--output-na-placeholder PLACEHOLDER</span></a></h3>
+<p>指定当字段不可用时的占位符。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-o</span> <span class="token string">"%(title)s.%(ext)s"</span> --output-na-placeholder <span class="token string">"Unknown"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="autonumber-size-number" tabindex="-1"><a class="header-anchor" href="#autonumber-size-number"><span>--autonumber-size NUMBER</span></a></h3>
+<p>指定自动编号的位数。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-o</span> <span class="token string">"%(autonumber)03d-%(title)s.%(ext)s"</span> --autonumber-size <span class="token number">3</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="autonumber-start-number" tabindex="-1"><a class="header-anchor" href="#autonumber-start-number"><span>--autonumber-start NUMBER</span></a></h3>
+<p>指定自动编号的起始值。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-o</span> <span class="token string">"%(autonumber)d-%(title)s.%(ext)s"</span> --autonumber-start <span class="token number">100</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="restrict-filenames" tabindex="-1"><a class="header-anchor" href="#restrict-filenames"><span>--restrict-filenames</span></a></h3>
+<p>限制文件名只包含 ASCII 字符。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --restrict-filenames <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="no-restrict-filenames" tabindex="-1"><a class="header-anchor" href="#no-restrict-filenames"><span>--no-restrict-filenames</span></a></h3>
+<p>允许文件名包含 Unicode 字符（默认）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --no-restrict-filenames <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="windows-filenames" tabindex="-1"><a class="header-anchor" href="#windows-filenames"><span>--windows-filenames</span></a></h3>
+<p>强制使用 Windows 兼容的文件名。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --windows-filenames <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="trim-filenames-length" tabindex="-1"><a class="header-anchor" href="#trim-filenames-length"><span>--trim-filenames LENGTH</span></a></h3>
+<p>限制文件名长度。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 限制文件名最多 100 个字符</span></span>
+<span class="line">yt-dlp --trim-filenames <span class="token number">100</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="w-overwrite" tabindex="-1"><a class="header-anchor" href="#w-overwrite"><span>-w, --overwrite</span></a></h3>
+<p>覆盖已存在的文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">--overwrite</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="no-overwrites" tabindex="-1"><a class="header-anchor" href="#no-overwrites"><span>--no-overwrites</span></a></h3>
+<p>不覆盖已存在的文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --no-overwrites <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="skip-download" tabindex="-1"><a class="header-anchor" href="#skip-download"><span>--skip-download</span></a></h3>
+<p>不下载视频，只执行其他操作（如下载字幕、缩略图等）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --skip-download --write-subs <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="格式选择选项" tabindex="-1"><a class="header-anchor" href="#格式选择选项"><span>格式选择选项</span></a></h2>
+<h3 id="f-format-format" tabindex="-1"><a class="header-anchor" href="#f-format-format"><span>-f, --format FORMAT</span></a></h3>
+<p>选择视频/音频格式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载最佳质量</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-f</span> <span class="token string">"bestvideo+bestaudio/best"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载最佳 MP4 格式</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-f</span> <span class="token string">"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载 1080p 或更低</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-f</span> <span class="token string">"bestvideo[height&lt;=1080]+bestaudio/best[height&lt;=1080]"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载特定分辨率</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-f</span> <span class="token string">"bestvideo[height=720]+bestaudio/best[height=720]"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载最小文件</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-f</span> <span class="token string">"worst"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="s-format-sort-sortorder" tabindex="-1"><a class="header-anchor" href="#s-format-sort-sortorder"><span>-S, --format-sort SORTORDER</span></a></h3>
+<p>按指定顺序排序格式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 优先选择分辨率，然后文件大小</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-S</span> <span class="token string">"res,fps"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 优先选择 MP4 格式</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-S</span> <span class="token string">"ext"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 优先选择更高分辨率</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-S</span> <span class="token string">"res:1080"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="format-sort-force" tabindex="-1"><a class="header-anchor" href="#format-sort-force"><span>--format-sort-force</span></a></h3>
+<p>强制使用格式排序，即使有更高质量的组合。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --format-sort-force <span class="token parameter variable">-S</span> <span class="token string">"res"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="f-list-formats" tabindex="-1"><a class="header-anchor" href="#f-list-formats"><span>-F, --list-formats</span></a></h3>
+<p>列出所有可用格式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-F</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="merge-output-format-format" tabindex="-1"><a class="header-anchor" href="#merge-output-format-format"><span>--merge-output-format FORMAT</span></a></h3>
+<p>指定合并输出格式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 合并为 MP4</span></span>
+<span class="line">yt-dlp --merge-output-format mp4 <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 合并为 MKV</span></span>
+<span class="line">yt-dlp --merge-output-format mkv <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="字幕选项" tabindex="-1"><a class="header-anchor" href="#字幕选项"><span>字幕选项</span></a></h2>
+<h3 id="write-subs" tabindex="-1"><a class="header-anchor" href="#write-subs"><span>--write-subs</span></a></h3>
+<p>下载字幕。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --write-subs <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="write-auto-subs" tabindex="-1"><a class="header-anchor" href="#write-auto-subs"><span>--write-auto-subs</span></a></h3>
+<p>下载自动生成的字幕。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --write-auto-subs <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="all-subs" tabindex="-1"><a class="header-anchor" href="#all-subs"><span>--all-subs</span></a></h3>
+<p>下载所有可用字幕。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --all-subs <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="sub-langs-langs" tabindex="-1"><a class="header-anchor" href="#sub-langs-langs"><span>--sub-langs LANGS</span></a></h3>
+<p>指定要下载的字幕语言。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载中文字幕</span></span>
+<span class="line">yt-dlp --write-subs --sub-langs <span class="token string">"zh-Hans"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载英文字幕</span></span>
+<span class="line">yt-dlp --write-subs --sub-langs <span class="token string">"en"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载多个语言</span></span>
+<span class="line">yt-dlp --write-subs --sub-langs <span class="token string">"en,zh-Hans,zh-Hant"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载所有字幕</span></span>
+<span class="line">yt-dlp --write-subs --sub-langs <span class="token string">"all"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载所有字幕（包括自动生成）</span></span>
+<span class="line">yt-dlp --write-subs --sub-langs <span class="token string">"all,-live_chat"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="sub-format-format" tabindex="-1"><a class="header-anchor" href="#sub-format-format"><span>--sub-format FORMAT</span></a></h3>
+<p>字幕格式偏好。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 优先选择 SRT 格式</span></span>
+<span class="line">yt-dlp --sub-format srt --write-subs <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 优先选择 ASS 格式</span></span>
+<span class="line">yt-dlp --sub-format ass --write-subs <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="embed-subs" tabindex="-1"><a class="header-anchor" href="#embed-subs"><span>--embed-subs</span></a></h3>
+<p>将字幕嵌入视频文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --embed-subs --sub-langs <span class="token string">"zh-Hans"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="音频选项" tabindex="-1"><a class="header-anchor" href="#音频选项"><span>音频选项</span></a></h2>
+<h3 id="x-extract-audio" tabindex="-1"><a class="header-anchor" href="#x-extract-audio"><span>-x, --extract-audio</span></a></h3>
+<p>将视频转换为音频文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-x</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="audio-format-format" tabindex="-1"><a class="header-anchor" href="#audio-format-format"><span>--audio-format FORMAT</span></a></h3>
+<p>指定音频格式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 转换为 MP3</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format mp3 <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 AAC</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format aac <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 FLAC</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format flac <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 M4A</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format m4a <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 OPUS</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format opus <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 VORBIS</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format vorbis <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 WAV</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format wav <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="audio-quality-quality" tabindex="-1"><a class="header-anchor" href="#audio-quality-quality"><span>--audio-quality QUALITY</span></a></h3>
+<p>指定音频质量。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 最佳质量</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format mp3 --audio-quality <span class="token number">0</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 中等质量</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format mp3 --audio-quality <span class="token number">5</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 最小体积</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format mp3 --audio-quality <span class="token number">9</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 指定比特率</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format mp3 --audio-quality 320K <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="视频选项" tabindex="-1"><a class="header-anchor" href="#视频选项"><span>视频选项</span></a></h2>
+<h3 id="recode-video-format" tabindex="-1"><a class="header-anchor" href="#recode-video-format"><span>--recode-video FORMAT</span></a></h3>
+<p>将视频重新编码为指定格式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 转换为 MP4</span></span>
+<span class="line">yt-dlp --recode-video mp4 <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 MKV</span></span>
+<span class="line">yt-dlp --recode-video mkv <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 AVI</span></span>
+<span class="line">yt-dlp --recode-video avi <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="postprocessor-args-args" tabindex="-1"><a class="header-anchor" href="#postprocessor-args-args"><span>--postprocessor-args ARGS</span></a></h3>
+<p>传递参数给后处理器。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 传递参数给 FFmpeg</span></span>
+<span class="line">yt-dlp --postprocessor-args <span class="token string">"ffmpeg:-crf 23"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="k-keep-video" tabindex="-1"><a class="header-anchor" href="#k-keep-video"><span>-k, --keep-video</span></a></h3>
+<p>保留中间视频文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --keep-video <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="缩略图选项" tabindex="-1"><a class="header-anchor" href="#缩略图选项"><span>缩略图选项</span></a></h2>
+<h3 id="write-thumbnail" tabindex="-1"><a class="header-anchor" href="#write-thumbnail"><span>--write-thumbnail</span></a></h3>
+<p>下载缩略图。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --write-thumbnail <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="write-all-thumbnails" tabindex="-1"><a class="header-anchor" href="#write-all-thumbnails"><span>--write-all-thumbnails</span></a></h3>
+<p>下载所有格式的缩略图。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --write-all-thumbnails <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="list-thumbnails" tabindex="-1"><a class="header-anchor" href="#list-thumbnails"><span>--list-thumbnails</span></a></h3>
+<p>列出所有可用缩略图。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --list-thumbnails <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="embed-thumbnail" tabindex="-1"><a class="header-anchor" href="#embed-thumbnail"><span>--embed-thumbnail</span></a></h3>
+<p>将缩略图嵌入音频文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-x</span> --audio-format mp3 --embed-thumbnail <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="元数据选项" tabindex="-1"><a class="header-anchor" href="#元数据选项"><span>元数据选项</span></a></h2>
+<h3 id="write-description" tabindex="-1"><a class="header-anchor" href="#write-description"><span>--write-description</span></a></h3>
+<p>下载视频描述。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --write-description <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="write-info-json" tabindex="-1"><a class="header-anchor" href="#write-info-json"><span>--write-info-json</span></a></h3>
+<p>下载视频元数据为 JSON 格式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --write-info-json <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="write-annotations" tabindex="-1"><a class="header-anchor" href="#write-annotations"><span>--write-annotations</span></a></h3>
+<p>下载视频注释。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --write-annotations <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="embed-metadata" tabindex="-1"><a class="header-anchor" href="#embed-metadata"><span>--embed-metadata</span></a></h3>
+<p>嵌入元数据到视频文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --embed-metadata <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="add-metadata" tabindex="-1"><a class="header-anchor" href="#add-metadata"><span>--add-metadata</span></a></h3>
+<p>添加元数据到视频文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --add-metadata <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="身份验证选项" tabindex="-1"><a class="header-anchor" href="#身份验证选项"><span>身份验证选项</span></a></h2>
+<h3 id="u-username-username" tabindex="-1"><a class="header-anchor" href="#u-username-username"><span>-u, --username USERNAME</span></a></h3>
+<p>身份验证用户名。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-u</span> <span class="token string">"username"</span> <span class="token parameter variable">-p</span> <span class="token string">"password"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="p-password-password" tabindex="-1"><a class="header-anchor" href="#p-password-password"><span>-p, --password PASSWORD</span></a></h3>
+<p>身份验证密码。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-u</span> <span class="token string">"username"</span> <span class="token parameter variable">-p</span> <span class="token string">"password"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="two-factor-two-factor" tabindex="-1"><a class="header-anchor" href="#two-factor-two-factor"><span>--two-factor TWO_FACTOR</span></a></h3>
+<p>两步验证码。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-u</span> <span class="token string">"username"</span> <span class="token parameter variable">-p</span> <span class="token string">"password"</span> --two-factor <span class="token string">"123456"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="video-password-password" tabindex="-1"><a class="header-anchor" href="#video-password-password"><span>--video-password PASSWORD</span></a></h3>
+<p>视频密码（针对密码保护的视频）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --video-password <span class="token string">"mypassword"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="cookies-file" tabindex="-1"><a class="header-anchor" href="#cookies-file"><span>--cookies FILE</span></a></h3>
+<p>使用 Cookie 文件进行身份验证。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">--cookies</span> cookies.txt <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="cookies-from-browser-browser" tabindex="-1"><a class="header-anchor" href="#cookies-from-browser-browser"><span>--cookies-from-browser BROWSER</span></a></h3>
+<p>从浏览器导入 Cookie。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 从 Chrome 导入</span></span>
+<span class="line">yt-dlp --cookies-from-browser chrome <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 从 Firefox 导入</span></span>
+<span class="line">yt-dlp --cookies-from-browser firefox <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 从 Edge 导入</span></span>
+<span class="line">yt-dlp --cookies-from-browser edge <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 从 Safari 导入</span></span>
+<span class="line">yt-dlp --cookies-from-browser safari <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 从 Opera 导入</span></span>
+<span class="line">yt-dlp --cookies-from-browser opera <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 从 Brave 导入</span></span>
+<span class="line">yt-dlp --cookies-from-browser brave <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 指定配置文件</span></span>
+<span class="line">yt-dlp --cookies-from-browser <span class="token string">"chrome:profile_name"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="代理选项" tabindex="-1"><a class="header-anchor" href="#代理选项"><span>代理选项</span></a></h2>
+<h3 id="geo-verification-proxy-url" tabindex="-1"><a class="header-anchor" href="#geo-verification-proxy-url"><span>--geo-verification-proxy URL</span></a></h3>
+<p>使用此代理验证地理限制。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --geo-verification-proxy <span class="token string">"http://proxy.example.com:8080"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="geo-bypass" tabindex="-1"><a class="header-anchor" href="#geo-bypass"><span>--geo-bypass</span></a></h3>
+<p>绕过地理限制。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --geo-bypass <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="no-geo-bypass" tabindex="-1"><a class="header-anchor" href="#no-geo-bypass"><span>--no-geo-bypass</span></a></h3>
+<p>不绕过地理限制。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --no-geo-bypass <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="geo-bypass-country-code" tabindex="-1"><a class="header-anchor" href="#geo-bypass-country-code"><span>--geo-bypass-country CODE</span></a></h3>
+<p>使用指定国家绕过地理限制。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 使用美国 IP</span></span>
+<span class="line">yt-dlp --geo-bypass-country US <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 使用英国 IP</span></span>
+<span class="line">yt-dlp --geo-bypass-country GB <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 使用日本 IP</span></span>
+<span class="line">yt-dlp --geo-bypass-country JP <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="输出选项" tabindex="-1"><a class="header-anchor" href="#输出选项"><span>输出选项</span></a></h2>
+<h3 id="q-quiet" tabindex="-1"><a class="header-anchor" href="#q-quiet"><span>-q, --quiet</span></a></h3>
+<p>静默模式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-q</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="no-warnings" tabindex="-1"><a class="header-anchor" href="#no-warnings"><span>--no-warnings</span></a></h3>
+<p>忽略警告。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --no-warnings <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="s-simulate" tabindex="-1"><a class="header-anchor" href="#s-simulate"><span>-s, --simulate</span></a></h3>
+<p>模拟下载，不实际下载文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">--simulate</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="ignore-errors" tabindex="-1"><a class="header-anchor" href="#ignore-errors"><span>--ignore-errors</span></a></h3>
+<p>忽略下载错误。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --ignore-errors <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="no-ignore-errors" tabindex="-1"><a class="header-anchor" href="#no-ignore-errors"><span>--no-ignore-errors</span></a></h3>
+<p>不忽略下载错误（默认）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --no-ignore-errors <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="dump-json" tabindex="-1"><a class="header-anchor" href="#dump-json"><span>--dump-json</span></a></h3>
+<p>以 JSON 格式输出视频信息。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --dump-json <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="print-template" tabindex="-1"><a class="header-anchor" href="#print-template"><span>--print TEMPLATE</span></a></h3>
+<p>打印视频信息而不下载。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 打印标题</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--print</span> <span class="token string">"%(title)s"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 打印 ID 和标题</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--print</span> <span class="token string">"%(id)s: %(title)s"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 打印多个信息</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--print</span> <span class="token string">"%(id)s<span class="token entity" title="\n">\n</span>%(title)s<span class="token entity" title="\n">\n</span>%(duration)s"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="j-dump-single-json" tabindex="-1"><a class="header-anchor" href="#j-dump-single-json"><span>-j, --dump-single-json</span></a></h3>
+<p>以 JSON 格式输出单个视频信息（不下载）。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp <span class="token parameter variable">-j</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="get-title" tabindex="-1"><a class="header-anchor" href="#get-title"><span>--get-title</span></a></h3>
+<p>打印视频标题。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --get-title <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="get-id" tabindex="-1"><a class="header-anchor" href="#get-id"><span>--get-id</span></a></h3>
+<p>打印视频 ID。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --get-id <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="get-url" tabindex="-1"><a class="header-anchor" href="#get-url"><span>--get-url</span></a></h3>
+<p>打印视频 URL。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --get-url <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="get-description" tabindex="-1"><a class="header-anchor" href="#get-description"><span>--get-description</span></a></h3>
+<p>打印视频描述。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --get-description <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="get-filename" tabindex="-1"><a class="header-anchor" href="#get-filename"><span>--get-filename</span></a></h3>
+<p>打印文件名。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --get-filename <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="get-duration" tabindex="-1"><a class="header-anchor" href="#get-duration"><span>--get-duration</span></a></h3>
+<p>打印视频时长。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --get-duration <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="其他选项" tabindex="-1"><a class="header-anchor" href="#其他选项"><span>其他选项</span></a></h2>
+<h3 id="exec-cmd" tabindex="-1"><a class="header-anchor" href="#exec-cmd"><span>--exec CMD</span></a></h3>
+<p>下载完成后执行命令。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 下载后播放视频</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--exec</span> <span class="token string">"vlc {}"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 下载后移动文件</span></span>
+<span class="line">yt-dlp <span class="token parameter variable">--exec</span> <span class="token string">"mv {} ~/Videos/"</span> <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="convert-subs-format" tabindex="-1"><a class="header-anchor" href="#convert-subs-format"><span>--convert-subs FORMAT</span></a></h3>
+<p>转换字幕格式。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 转换为 SRT</span></span>
+<span class="line">yt-dlp --write-subs --convert-subs srt <span class="token string">"URL"</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 转换为 ASS</span></span>
+<span class="line">yt-dlp --write-subs --convert-subs ass <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="concat-playlist" tabindex="-1"><a class="header-anchor" href="#concat-playlist"><span>--concat-playlist</span></a></h3>
+<p>将播放列表中的视频合并为一个文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --concat-playlist <span class="token string">"PLAYLIST_URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="config-locations-path" tabindex="-1"><a class="header-anchor" href="#config-locations-path"><span>--config-locations PATH</span></a></h3>
+<p>指定配置文件路径。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --config-locations ~/.config/yt-dlp/custom_config <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="ignore-config" tabindex="-1"><a class="header-anchor" href="#ignore-config"><span>--ignore-config</span></a></h3>
+<p>忽略配置文件。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">yt-dlp --ignore-config <span class="token string">"URL"</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="总结" tabindex="-1"><a class="header-anchor" href="#总结"><span>总结</span></a></h2>
+<p>以上是 yt-dlp 的主要参数介绍。实际使用时，可以根据需要组合多个参数。建议：</p>
+<ol>
+<li>使用配置文件保存常用参数</li>
+<li>使用 <code v-pre>--simulate</code> 参数先测试</li>
+<li>查阅官方文档了解更多参数和用法</li>
+<li>定期更新 yt-dlp 获得最新功能和修复</li>
+</ol>
+<p>更多参数和详细信息，请参考：</p>
+<ul>
+<li><a href="https://github.com/yt-dlp/yt-dlp#usage-and-options" target="_blank" rel="noopener noreferrer">yt-dlp 官方文档</a></li>
+<li><a href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md" target="_blank" rel="noopener noreferrer">支持的网站列表</a></li>
+</ul>
+</div></template>
+
+
