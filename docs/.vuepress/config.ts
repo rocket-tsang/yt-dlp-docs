@@ -21,7 +21,23 @@ export default defineUserConfig({
     ['meta', { name: 'robots', content: 'index, follow' }],
     ['script', { charset: 'UTF-8', id: 'LA_COLLECT', src: '//sdk.51.la/js-sdk-pro.min.js' }],
     ['script', {}, 'LA.init({id:"JrOb8e7AfCcc9tUO",ck:"JrOb8e7AfCcc9tUO"})'],
-
+    ['script', {}, ''],
+    [
+        'script',
+            {
+              async: true,
+              src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8577838474123974',
+              crossorigin: 'anonymous'
+            }
+    ],
+    // 2. 你要加的 Adsense 验证 meta 标签
+    [
+      'meta',
+      {
+        name: 'google-adsense-account',
+        content: 'ca-pub-8577838474123974'
+      }
+    ]
   ],
   plugins: [
     sitemapPlugin({
