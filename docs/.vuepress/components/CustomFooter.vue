@@ -10,7 +10,10 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const authorBlogText = computed(() => {
-  return route.path.startsWith('/en/') ? "Author's Blog" : "作者博客"
+  if (route.path.startsWith('/en/')) return "Author's Blog"
+  if (route.path.startsWith('/ja/')) return "著者のブログ"
+  if (route.path.startsWith('/ko/')) return "저자의 블로그"
+  return "作者博客"
 })
 </script>
 
