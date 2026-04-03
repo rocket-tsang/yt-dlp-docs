@@ -30,7 +30,6 @@ export default defineUserConfig({
               crossorigin: 'anonymous'
             }
     ],
-    // 2. 你要加的 Adsense 验证 meta 标签
     [
       'meta',
       {
@@ -39,6 +38,18 @@ export default defineUserConfig({
       }
     ]
   ],
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: 'yt-dlp 技术文档',
+      description: '强大的视频下载工具完整使用指南',
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'yt-dlp Documentation',
+      description: 'The complete guide to yt-dlp, the powerful video downloader.',
+    },
+  },
   plugins: [
     sitemapPlugin({
       hostname: 'https://yt.gzsoon.com/',
@@ -56,80 +67,78 @@ export default defineUserConfig({
     docsDir: 'docs',
     editLink: false,
     lastUpdated: true,
-    lastUpdatedText: '上次更新',
     contributors: false,
-    tip: '提示',
-    warning: '注意',
-    danger: '警告',
-    notFound: ['页面未找到', '这里什么都没有', '我们怎么到这儿来了？'],
-    backToHome: '返回首页',
-    openInNewWindow: '在新窗口打开',
-    toggleColorMode: '切换颜色模式',
-    toggleSidebar: '切换侧边栏',
-    darkMode: false, // 禁用暗色模式以避免SSR issue
-    navbar: [
-      { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/' },
-      { text: '安装', link: '/install/' },
-      { text: '命令行使用', link: '/usage/' },
-      { text: '参数详解', link: '/params/' },
-      { text: '支持网站', link: '/sites/' },
-      { text: '实战案例', link: '/practice/' },
-      { text: '联系我们', link: '/contact/' },
-      { text: '隐私权', link: '/privacy/' },
-    ],
-    sidebar: {
-      '/guide/': [
-        {
-          text: '指南',
-          children: ['/guide/README.md'],
+    darkMode: false,
+
+    locales: {
+      '/': {
+        selectLanguageAltText: '选择语言',
+        selectLanguageName: '简体中文',
+        lastUpdatedText: '上次更新',
+        tip: '提示',
+        warning: '注意',
+        danger: '警告',
+        notFound: ['页面未找到', '这里什么都没有', '我们怎么到这儿来了？'],
+        backToHome: '返回首页',
+        openInNewWindow: '在新窗口打开',
+        toggleColorMode: '切换颜色模式',
+        toggleSidebar: '切换侧边栏',
+        navbar: [
+          { text: '首页', link: '/' },
+          { text: '指南', link: '/guide/' },
+          { text: '安装', link: '/install/' },
+          { text: '命令行使用', link: '/usage/' },
+          { text: '参数详解', link: '/params/' },
+          { text: '支持网站', link: '/sites/' },
+          { text: '实战案例', link: '/practice/' },
+          { text: '联系我们', link: '/contact/' },
+          { text: '隐私权', link: '/privacy/' },
+        ],
+        sidebar: {
+          '/guide/': [{ text: '指南', children: ['/guide/README.md'] }],
+          '/install/': [{ text: '安装指南', children: ['/install/README.md'] }],
+          '/usage/': [{ text: '命令行使用', children: ['/usage/README.md'] }],
+          '/params/': [{ text: '参数详解', children: ['/params/README.md'] }],
+          '/sites/': [{ text: '支持网站', children: ['/sites/README.md'] }],
+          '/practice/': [{ text: '实战案例', children: ['/practice/README.md'] }],
+          '/contact/': [{ text: '联系我们', children: ['/contact/README.md'] }],
+          '/privacy/': [{ text: '隐私权政策', children: ['/privacy/README.md'] }],
         },
-      ],
-      '/install/': [
-        {
-          text: '安装指南',
-          children: ['/install/README.md'],
+      },
+      '/en/': {
+        selectLanguageAltText: 'Languages',
+        selectLanguageName: 'English',
+        lastUpdatedText: 'Last Updated',
+        tip: 'TIP',
+        warning: 'WARNING',
+        danger: 'DANGER',
+        notFound: ['Page Not Found', 'Nothing here', 'How did we get here?'],
+        backToHome: 'Back to home',
+        openInNewWindow: 'Open in new window',
+        toggleColorMode: 'Toggle color mode',
+        toggleSidebar: 'Toggle sidebar',
+        navbar: [
+          { text: 'Home', link: '/en/' },
+          { text: 'Guide', link: '/en/guide/' },
+          { text: 'Installation', link: '/en/install/' },
+          { text: 'Usage', link: '/en/usage/' },
+          { text: 'Parameters', link: '/en/params/' },
+          { text: 'Sites', link: '/en/sites/' },
+          { text: 'Practice', link: '/en/practice/' },
+          { text: 'Contact', link: '/en/contact/' },
+          { text: 'Privacy', link: '/en/privacy/' },
+        ],
+        sidebar: {
+          '/en/guide/': [{ text: 'Guide', children: ['/en/guide/README.md'] }],
+          '/en/install/': [{ text: 'Installation', children: ['/en/install/README.md'] }],
+          '/en/usage/': [{ text: 'Usage', children: ['/en/usage/README.md'] }],
+          '/en/params/': [{ text: 'Parameters', children: ['/en/params/README.md'] }],
+          '/en/sites/': [{ text: 'Sites', children: ['/en/sites/README.md'] }],
+          '/en/practice/': [{ text: 'Practice', children: ['/en/practice/README.md'] }],
+          '/en/contact/': [{ text: 'Contact', children: ['/en/contact/README.md'] }],
+          '/en/privacy/': [{ text: 'Privacy Policy', children: ['/en/privacy/README.md'] }],
         },
-      ],
-      '/usage/': [
-        {
-          text: '命令行使用',
-          children: ['/usage/README.md'],
-        },
-      ],
-      '/params/': [
-        {
-          text: '参数详解',
-          children: ['/params/README.md'],
-        },
-      ],
-      '/sites/': [
-        {
-          text: '支持网站',
-          children: ['/sites/README.md'],
-        },
-      ],
-      '/practice/': [
-        {
-          text: '实战案例',
-          children: ['/practice/README.md'],
-        },
-      ],
-      '/contact/': [
-        {
-          text: '联系我们',
-          children: ['/contact/README.md'],
-        },
-      ],
-      '/privacy/': [
-        {
-          text: '隐私权政策',
-          children: ['/privacy/README.md'],
-        },
-      ],
+      },
     },
   }),
-  lang: 'zh-CN',
-  title: 'yt-dlp 技术文档',
-  description: '强大的视频下载工具完整使用指南',
 })
