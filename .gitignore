@@ -16,5 +16,9 @@ yarn-error.log*
 .env.local
 .env.*.local
 .gemini
-docs/.vuepress/.temp
-docs/.vuepress/.cache
+
+/docs/.vuepress/.cache/
+/docs/.vuepress/.temp/
+/.gemini/
+/docs/.vuepress/.temp/
+/docs/.vuepress/.temp/
