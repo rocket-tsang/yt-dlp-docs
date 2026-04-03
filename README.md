@@ -2,6 +2,8 @@
 
 基于 Vuepress 构建的 yt-dlp 视频下载工具完整使用指南。
 
+[English](README_en.md) | [简体中文](README.md) | [日本語](README_ja.md) | [한국어](README_ko.md)
+
 ## 项目介绍
 
 本项目使用 Vuepress 框架，生成 yt-dlp 技术文档网站，旨在帮助用户快速上手和深入了解 yt-dlp 的各种功能。
@@ -53,7 +55,7 @@ npm run docs:build
 │   ├── params              # 参数详解
 │   ├── sites               # 支持网站
 │   ├── practice            # 技术实战
-│   ├── contact.md          # 联系我们
+│   ├── contact             # 联系我们
 │   └── README.md           # 首页
 ├── package.json
 └── README.md
