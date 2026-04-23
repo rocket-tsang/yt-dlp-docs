@@ -22,6 +22,9 @@ export default defineUserConfig({
     ['script', { charset: 'UTF-8', id: 'LA_COLLECT', src: '//sdk.51.la/js-sdk-pro.min.js' }],
     ['script', {}, 'LA.init({id:"JrOb8e7AfCcc9tUO",ck:"JrOb8e7AfCcc9tUO"})'],
     ['script', {}, ''],
+    ['script', {
+      src: 'https://pl29227475.profitablecpmratenetwork.com/6a/d2/8d/6ad28dfc64f77ccd91f0f4765f57a87e.js',
+    }, ''],
     [
         'script',
             {
@@ -29,6 +32,7 @@ export default defineUserConfig({
               src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8577838474123974',
               crossorigin: 'anonymous'
             }
+
     ],
     [
       'meta',
